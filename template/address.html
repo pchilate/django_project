@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}| Address{% endblock title %}
+{% block content %}
+<div class="container my-5">
+ <div class="row">
+ <h3 style ="text-align:left;">Welcome <span class="text-capitalize">{{request.user.username}}</span></h3>
+  <div class="col-sm-2 border-end">
+   <ul class="list-unstyled">
+    <li class="d-grid"><a href="{% url 'profile' %}" class="btn">Profile</a></li>
+    <li class="d-grid"><a href="{% url 'address' %}" class="btn {{active}}">Address</a></li>
+   </ul>
+  </div>
+  <div class="col-sm-9 offset-sm-1">
+   <div class="row">
+     {% for ad in add %}
+    <div class="col-sm-6">
+     <div class="card">
+      <div class="card-body">
+       <h3>Address {{forloop.counter}}</h3>
+       <table class="table table-hover">
+           <tr>
+              <th>Name</th>
+              <td>{{ad.first_name}} {{ad.last_name}}</td>
+          </tr>
+          <tr>
+              <th>Contact_No</th>
+              <td>{{ad.Contact_No}} GB</td>
+          </tr>
+          <tr>
+              <th>Locality</th>
+              <td>{{ad.locality}}</td>
+          </tr>
+          <tr>
+              <th>City</th>
+              <td>{{ad.city}}</td>
+          </tr>
+          <tr>
+              <th>State</th>
+              <td>{{ad.state}}</td>
+          </tr>
+          <tr>
+              <th>Zipcode</th>
+              <td>{{ad.zipcode}}</td>
+          </tr>
+        </table>
+
+      </div>
+     </div>
+    </div>
+    {% endfor %}
+
+   </div>
+  </div>
+ </div>
+</div>
+{% endblock %}

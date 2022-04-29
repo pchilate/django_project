@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}| Checkout{% endblock title %}
+{% block content %}
+<div class="container">
+ <div class="row mt-5">
+  <div class="col-sm-6">
+    <h4>Order Summary</h4>
+    <hr>
+     {% for i in laptop %}
+      <div class="card mb-2 ">
+        <div class="card-body " style="text-align:left;">
+          <div class="col-sm-3 text-center align-self-center"><img src="{{i.Image.url}}" alt="" srcset="" class="img-fluid  shadow-sm" height="150" width="150"> </div>
+          <h5>Product: {{i.Title}}</h5>
+          <p>{{i.Description}}</p>
+          <p>Quantity: 1</p>
+          <p class="fw-bold">Price:{{i.Price}}</p>
+        </div>
+      </div>
+      {% endfor %}
+      {% for i in monitor %}
+       <div class="card mb-2 ">
+         <div class="card-body " style = "text-align:left;">
+           <div class="col-sm-3 text-center align-self-center"><img src="{{i.Image.url}}" alt="" srcset="" class="img-fluid  shadow-sm" height="150" width="150"> </div>
+           <h5>Product: {{i.Title}}</h5>
+           <p>{{i.Description}}</p>
+           <p>Quantity: 1</p>
+           <p class="fw-bold">Price:{{i.Price}}</p>
+         </div>
+       </div>
+       {% endfor %}
+       {% for i in printer %}
+        <div class="card mb-2" >
+          <div class="card-body " style="text-align:left;">
+            <div class="col-sm-3 text-center align-self-center"><img src="{{i.Image.url}}" alt="" srcset="" class="img-fluid  shadow-sm" height="150" width="150"> </div>
+            <h5>Product: {{i.Title}}</h5>
+            <p>{{i.Description}}</p>
+            <p>Quantity: 1</p>
+            <p class="fw-bold">Price:{{i.Price}}</p>
+          </div>
+        </div>
+        {% endfor %}
+        {% for i in headphone %}
+         <div class="card mb-2 ">
+           <div class="card-body " style="text-align:left">
+             <div class="col-sm-3 text-center align-self-center"><img src="{{i.Image.url}}" alt="" srcset="" class="img-fluid  shadow-sm" height="150" width="150"> </div>
+             <h5>Product: {{i.Title}}</h5>
+             <p>{{i.Description}}</p>
+             <p>Quantity: 1</p>
+             <p class="fw-bold">Price:{{i.Price}}</p>
+           </div>
+         </div>
+         {% endfor %}
+         <p class="fw-bold">Total Bill Amount: &nbsp; 70 + {{amount}} = {{total_amount}}</p>
+    <small>Term and Condition: Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, ullam saepe! Iure optio repellat dolor velit, minus rem. Facilis cumque neque numquam laboriosam, accusantium adipisci nisi nihil in et quis?</small>
+  </div>
+
+
+  <div class="col-sm-4 offset-sm-1">
+    <h4>Select Shipping Address</h4>
+    <hr>
+    <form action="/paymentdone">
+      {% for ad in add %}
+      <div class="card" >
+        <div class="card-body" style="text-align:left;">
+        <h5>{{ad.first_name}} {{ad.last_name}}</h5>
+        <p>{{ad.locality}},{{ad.city}},{{ad.state}} - {{ad.zipcode}}</p>
+        <p>Contact: {{ad.Contact_No}}</p>
+        </div>
+      </div>
+        <div class="form-check mt-2 mb-5" style="text-align:left;">
+          <input class="form-check-input" type="radio" name = "custid" id = "custid_{{forloop.counter}}" value="{{ad.id}}">
+          <label class="form-check-label fw-bold" for="custid_{{forloop.counter}}" >
+            Address: {{forloop.counter}}</label>
+        </div>
+        {%endfor%}
+        <div class="text-end">
+          <button type="submit" class="btn btn-warning mt-3 px-5 fw-bold">Continue</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

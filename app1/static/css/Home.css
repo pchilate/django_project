@@ -1,0 +1,218 @@
+body {
+
+  font-family: "Bree Serif", serif;
+  box-sizing: border-box;
+}
+.navbar {
+  background-color: #d1e0e0;
+  color: black;
+}
+.navbar a {
+  color: black;
+}
+
+.navbar-brand {
+  font-family: "Bungee", cursive;
+}
+
+/* .navbar-nav .nav-link{
+  color: black
+
+} */
+
+.navbar-nav a:hover {
+  background-color: black ;
+  color: White;
+
+}
+
+.dropdown-menu {
+  background-color:#d1e0e0;
+}
+.dropdown-menu a {
+  color: black;
+}
+.dropdown-menu a:hover {
+  background-color: black;
+  color: white;
+}
+
+.navbar-nav .btn {
+  border-radius: 15px;
+  margin-right: 10px;
+  margin-top: 5px
+}
+
+.AboutUs{
+
+ background-color: white;
+}
+
+.laptop{
+  background-color: yellow;
+  height: 350px
+
+}
+.laptop img{
+  max-width: 300px;
+  margin-top: 10px;
+}
+
+.laptop img,div{
+  text-align: center;
+}
+
+.monitors{
+  background-color: white;
+  height: 370px
+}
+.monitors img{
+  max-width: 300px;
+  margin-top: 10px;
+}
+
+.printers{
+  background-color: yellow;
+  height: 380px
+}
+.printers img{
+  max-width: 300px;
+  margin-top: 10px;
+}
+
+.headphones{
+  background-color: white;
+  height: 380px
+}
+.headphones img{
+  max-width: 300px;
+  margin-top: 10px;
+}
+
+
+.wave{
+  color: yellow;
+  display: block;
+}
+
+.wave-inverted{
+  transform: matrix(1,0,0,-1,0,0);
+}
+
+h2 {
+  margin-bottom: 25px;
+  margin-top: 10px;
+  color: black;
+  /* background-color: black; */
+}
+
+
+@media all and (min-width: 992px) {
+  .navbar .nav-item .dropdown-menu {
+    display: none;
+  }
+
+  .navbar .nav-item:hover .dropdown-menu {
+    display: block;
+  }
+
+  .navbar .nav-item .dropdown-menu {
+    margin-top: 0;
+  }
+}
+
+
+
+.offcanvas {
+  background-color: gray;
+}
+.offcanvas-header {
+  background-color: black;
+}
+.offcanvas button {
+  background-color: white;
+}
+.offcanvas h3 {
+  color: green;
+}
+
+.offcanvas-header #Helpustoreach {
+  background-color: black;
+}
+
+
+
+
+@media screen and (min-width: 768px){
+  .laptop{
+    height: 370px
+  }
+  .laptop img {
+      max-width: 370px
+  }
+  .laptop .text{
+      font-size: 20px
+  }
+
+
+  .monitors{
+    height: 380px
+  }
+  .monitors img {
+      max-width: 370px
+
+  }
+  .monitors .text{
+      font-size: 20px
+  }
+
+
+  .printers{
+    height: 380px
+  }
+  .printers img {
+      max-width: 370px
+
+  }
+  .printers .text{
+      font-size: 20px
+  }
+
+
+  .headphones{
+    height: 380px
+  }
+  .headphones img {
+      max-width: 370px
+
+  }
+  .headphones .text{
+      font-size: 20px
+  }
+}
+
+.card img{
+  max-width: 300px
+}
+
+
+.card{
+  background: white;
+  box-shadow: 0px 0px 0px grey;
+  -webkit-transition:  box-shadow .6s ease-out;
+  box-shadow: .8px .9px 3px grey;
+}
+
+
+
+.card:hover{
+  box-shadow: 9px 9px 20px grey;
+  -webkit-transition:  box-shadow .6s ease-in;
+}
+
+
+.card .btn:hover{
+  background-color:#d1e0e0;
+  color: black;
+  border: none;
+}

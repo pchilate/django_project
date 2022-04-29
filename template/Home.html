@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{%load static%}
+{%block content%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotus</title>
+
+</head>
+
+<body>
+
+    <!-- About Us -->
+    <div class="container-fluid text-center AboutUs " id="Aboutus" >
+        <h2 style="background-color: black; color:white;">About Us</h2>
+        <div>
+            <p>
+                Established in 2006, Lotus has emerged as a reputed and respected name in the field of
+                electronic business solutions. Over the years, the organization has grown leaps and bounds in terms of
+                its
+                service delivered, technology competence and a holistic approach towards the market evolutions.
+            </p>
+            <p>
+                With a well-qualified and experienced team of sales and marketing professionals, Lotus has consistently
+                delivered technology drive products that can transform the way to do activitites.
+            </p>
+            <p>
+                Lotus has variety of products in the area of laptops,monitors,printers,headphones. The key aspects such
+                as
+                Personal laptops,business laptops,gaming laptops, color laser printer. Headphones also been available
+                with various catagory.
+            </p>
+            <p>Corporate Compliance and Tracking is another key area we have successfully managed through eMeeting,
+                Action Taken Reports, Project Management and Performance Trackers. Business Process Re-engineering with
+                digitization and mobility as the drivers has been one of our forte. SalesPro is our flagship Sales
+                Management Tool which has transformed the way organizations approach to handling Sales teams, looking at
+                Sales data from a qualitative perspective and delivering stellar customer service performances.</p>
+            <p>
+                Not just emerging technology but even emerging threats are on our radar. Lotus also has a dedicated
+                team offering services and consultancy towards Organization Network Security and VAPT with qualified
+                professionals to evaluate threats and offer solutions.
+            </p>
+        </div>
+     </div>
+    <svg class="wave" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none">
+        <path class="wave-path" d="M826.337463,25.5396311 C670.970254,58.655965 603.696181,68.7870267 447.802481,35.1443383 C293.342778,1.81111414 137.33377,1.81111414 0,1.81111414 L0,150 L1920,150 L1920,1.81111414 C1739.53523,-16.6853983 1679.86404,73.1607868 1389.7826,37.4859505 C1099.70117,1.81111414 981.704672,-7.57670281 826.337463,25.5396311 Z" fill="currentColor"></path>
+    </svg>
+    <div class="container-fulid  laptop">
+      <img src="{%static './images/laptops.jpg'%}" alt="">
+      <div class="text">
+        <p>Get the best Laptops Online from Lotus Digital Shop, choose for Home, gaming, business, stduent, Premium from top Laptop Brands like Apple, HP, Lenovo, Microsoft, Dell, iBall & more at the best market price with Execellent services.</p>
+        <div class="btn-group-vertical ">
+              <a href="{% url 'laptops' 'all' %}" class="btn btn-dark " id = "all" >Explore &gt;&gt;</a>
+        </div>
+      </div>
+    </div>
+    <svg class="wave wave-inverted" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none">
+        <path class="wave-path" d="M826.337463,25.5396311 C670.970254,58.655965 603.696181,68.7870267 447.802481,35.1443383 C293.342778,1.81111414 137.33377,1.81111414 0,1.81111414 L0,150 L1920,150 L1920,1.81111414 C1739.53523,-16.6853983 1679.86404,73.1607868 1389.7826,37.4859505 C1099.70117,1.81111414 981.704672,-7.57670281 826.337463,25.5396311 Z" fill="currentColor"></path>
+    </svg>
+    <div class="container-fulid monitors">
+        <img src="{%static './images/Monitors.webp'%}" alt="">
+        <div class="text">
+          <p>Get the best monitor's Online from Lotus Digital Shop, choose for Home, gaming, business from top  Brands like Apple, HP, Lenovo, Microsoft, Dell, iBall & more at the best market price with Execellent services.</p>
+          <div class="btn-group-vertical ">
+                <a href="{% url 'monitors' 'all' %}" class="btn btn-dark " id = "all">Explore &gt;&gt;</a>
+          </div>
+        </div>
+    </div>
+    <svg class="wave "  version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none">
+          <path class="wave-path" d="M826.337463,25.5396311 C670.970254,58.655965 603.696181,68.7870267 447.802481,35.1443383 C293.342778,1.81111414 137.33377,1.81111414 0,1.81111414 L0,150 L1920,150 L1920,1.81111414 C1739.53523,-16.6853983 1679.86404,73.1607868 1389.7826,37.4859505 C1099.70117,1.81111414 981.704672,-7.57670281 826.337463,25.5396311 Z" fill="currentColor"></path>
+    </svg>
+
+
+      <div class="container-fulid  printers">
+        <img src="{%static './images/printer.png'%}" alt="">
+        <div class="text">
+          <p>Get the best printer's Online from Lotus Digital Shop, choose for Home, office, business, A3 prineters , leaser printers from top printers Brands like HP, cannon, Epson , Pantum , zebra & more at the best market price with Execellent services.</p>
+          <div class="btn-group-vertical ">
+                <a href="{% url 'printers' 'all' %}" class="btn btn-dark " id = 'all'>Explore &gt;&gt;</a>
+          </div>
+        </div>
+      </div>
+      <svg class="wave wave-inverted"  version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none">
+          <path class="wave-path" d="M826.337463,25.5396311 C670.970254,58.655965 603.696181,68.7870267 447.802481,35.1443383 C293.342778,1.81111414 137.33377,1.81111414 0,1.81111414 L0,150 L1920,150 L1920,1.81111414 C1739.53523,-16.6853983 1679.86404,73.1607868 1389.7826,37.4859505 C1099.70117,1.81111414 981.704672,-7.57670281 826.337463,25.5396311 Z" fill="currentColor"></path>
+      </svg>
+
+
+      <div class="container-fulid headphones">
+        <img src="{%static './images/headphones.jpg'%}" alt="">
+        <div class="text">
+          <p>Get the best Headphones Online from Lotus Digital Shop, choose for Wired, wireless, earbuds from top Headphones Brands like Apple,boat,Ptron,JBL,Sony & more at the best market price with Execellent services.</p>
+          <div class="btn-group-vertical ">
+                <a href="{% url 'headphones' 'all' %}" class="btn btn-dark " id = "all" >Explore &gt;&gt;</a>
+          </div>
+        </div>
+
+
+
+
+
+
+
+</body>
+
+</html>
+{%endblock%}

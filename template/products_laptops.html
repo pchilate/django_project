@@ -1,0 +1,140 @@
+{%extends 'base.html'%}
+{% block title %}| Laptops{% endblock title %}
+{%block content%}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body >
+    <h2 style="text-align:center;">Laptop's</h2>
+    <div style="display: flex; flex-direction: row; flex-wrap: wrap">
+
+    {%for d in data%}
+    <div class="  card" style="width: 20rem; margin: 8px">
+        <img src="{{d.Image.url}}" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">{{d.Title}}</h5>
+            <p class="card-text" style="width: 250px; height: 150px; text-align: justify;"> {{d.Description}}</p>
+            <ul class="list-group list-group-flush" style = "text-align:justify;">
+                <li class=" list-group-item">
+                  Series: &nbsp;&nbsp; {{d.Series}}</li>
+                <li class="list-group-item">Brand: &nbsp;&nbsp; {{d.Brand}}</li>
+                <li class="list-group-item">Specific Uses For {{d.Uses}}</li>
+                <li class="list-group-item">Screen Size: &nbsp;&nbsp; {{d.Screen_size}} inches</li>
+                <li class="list-group-item">Price: &nbsp;&nbsp; &#8377;{{d.Price}}/-</li>
+
+                <div class="btn-group-vertical ">
+                    <a href="#" class="btn btn-dark " data-bs-toggle="modal" data-bs-target="#Modal_{{d.LID}}">More
+                        Details</a>
+                    <a href="{% url 'add-to-cart' d.LID 'laptop'%}" class="btn btn-dark" id = "{{d.LID}}" >Add To
+                        Cart</a>
+                    <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#Modal2">Buy Now</a>
+                </div>
+            </ul>
+        </div>
+    </div>
+   <!-- Modal1 -->
+  <div class="modal fade" id="Modal_{{d.LID}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">{{d.Title}}</h5>
+                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                   <table class="table table-hover">
+                       <tr>
+                          <th>Memory Type</th>
+                          <td>{{d.Memory_Type}}</td>
+                      </tr>
+                      <tr>
+                          <th>Maximum Memory Supported</th>
+                          <td>{{d.Maximum_memory}} GB</td>
+                      </tr>
+                      <tr>
+                          <th>Hard Disk Description</th>
+                          <td>{{d.Hard_Disk_Description}}</td>
+                      </tr>
+                      <tr>
+                          <th>Hard Drive Size</th>
+                          <td>{{d.Hard_drive_size}}</td>
+                      </tr>
+                      <tr>
+                          <th>Graphics Card Description</th>
+                          <td>{{d.Graphic_Card_Description}}</td>
+                      </tr>
+                      <tr>
+                          <th>Number of USB 3.0 port</th>
+                          <td>{{d.USB_3_port}}</td>
+                      </tr>
+                      <tr>
+                          <th>Number of USB 2.0 port</th>
+                          <td>{{d.USB_2_port}}</td>
+                      </tr>
+                      <tr>
+                          <th>Number of HDMI Ports</th>
+                          <td>{{d.HDMI_Port}}</td>
+                      </tr>
+                      <tr>
+                          <th>Resolution</th>
+                          <td>{{d.Resolution}}</td>
+                      </tr>
+                      <tr>
+                          <th>Processor Type</th>
+                          <td>{{d.Processor_Type}}</td>
+                      </tr>
+                      <tr>
+                          <th>Processor Speed</th>
+                          <td>{{d.Processor_Speed}} GHz</td>
+                      </tr>
+                      <tr>
+                          <th>Audio Details</th>
+                          <td>{{d.Audio_Details}}</td>
+                      </tr>
+                      <tr>
+                          <th>Operatnig System</th>
+                          <td>{{d.Operating_System}}</td>
+                      </tr>
+                      <tr>
+                         <th>Battery Life</th>
+                         <td>{{d.Battery_life}} Hours</td>
+                      </tr>
+                      <tr>
+                         <th>Connectivity Type</th>
+                         <td>{{d.Connectivity_Type}}</td>
+                      </tr>
+                      <tr>
+                          <th>Included Components</th>
+                         <td>{{d.Included_components}}</td>
+                      </tr>
+                      <tr>
+                          <th>Country</th>
+                          <td>{{d.Country}}</td>
+                      </tr>
+                      <tr>
+                          <th>Manufacturer</th>
+                          <td>{{d.Manufacturer}}</td>
+                      </tr>
+                      <tr>
+                          <th>Weight</th>
+                          <td>{{d.Weight}} Kg</td>
+                      </tr>
+                      <tr>
+                          <th>Seller</th>
+                          <td>{{d.seller}}</td>
+                      </tr>
+                  </table>
+                </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+  </div>
+    {%endfor%}
+    <div/>
+  </body>
+</html>
+{%endblock%}

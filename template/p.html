@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>products</title>
+  </head>
+  <body >
+        {%for i in data%}
+    <div style = "text-align:center;">
+      <!-- {% if data.Uses == Home %}
+          <h2>Laptops' For Home</h2>
+      {% elif data.Uses == Business %}
+          <h2>Laptops' For Business</h2>
+      {% elif data.Uses == Gaming %}
+          <h2>Laptops' For Gaming</h2>
+      {% elif data.Uses == Student %}
+          <h2>Laptops' For Student</h2>
+      {% elif data.Uses == Premium %}
+          <h2>Premium Laptop's</h2>
+      {% else %} -->
+
+          <h2>Laptop's< {{i.Uses}}/h2>
+
+      <!-- {%endif%} -->
+    </div>
+      {%endfor%}
+
+  </body>
+</html>
+{%endblock%}

@@ -1,0 +1,177 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotus  {% block title %} {% endblock title %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{%static './css/Home1.css'%}">
+    <link rel="stylesheet" href="{% static './css/all.min.css' %}">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Kalam:wght@300&family=Luxurious+Roman&family=Press+Start+2P&family=Vujahday+Script&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Bungee&family=Kalam:wght@300&family=Luxurious+Roman&family=Press+Start+2P&family=Vujahday+Script&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <!-- navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home'%}">
+                <h1>Lotus</h1>
+            </a>
+            <button class="navbar-toggler  navbar-light" style="color:black;"type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" ></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNavDropdown">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="btn btn-md  " aria-current="page" href="{% url 'home'%}">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="btn btn-md dropdown-toggle"  href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Laptops
+                        </a>
+                        <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="{% url 'laptops' 'home' %}" id = 'home'>For Home</a></li>
+                            <li><a class="dropdown-item" href="{% url 'laptops' 'business' %}" id = 'business'>For Business</a></li>
+                            <li><a class="dropdown-item" href="{% url 'laptops' 'gaming' %}" id = 'gaming'>Gaming</a></li>
+                            <li><a class="dropdown-item" href="{% url 'laptops' 'student' %}" id = 'student'>Student</a></li>
+                            <li><a class="dropdown-item" href="{% url 'laptops' 'premium' %}" id = 'premium'>Premium</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="btn btn-md  dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Monitors
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="{% url 'monitors' 'home' %}">For Home</a></li>
+                            <li><a class="dropdown-item" href="{% url 'monitors' 'business' %}">For Business</a></li>
+                            <li><a class="dropdown-item" href="{% url 'monitors' 'gaming' %}">Gaming</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="btn btn-md  dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            printers
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="{% url 'printers' 'home' %}">For Home/For Home-Ofice</a>
+                            </li>
+                            <li><a class="dropdown-item" href="{% url 'printers' 'A3 printers' %}">A3 Printers</a></li>
+                            <li><a class="dropdown-item" href="{% url 'printers' 'laser' %}"> Laser printers</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="btn btn-md  dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Headphones
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="{% url 'headphones' 'wired' %}">wired</a></li>
+                            <li><a class="dropdown-item" href="{% url 'headphones' 'wireless' %}">Wireless</a></li>
+                            <li><a class="dropdown-item" href="{% url 'headphones' 'earbuds' %}">Earbuds Headphones</a></li>
+                        </ul>
+                    </li>
+                    {%if request.user.is_authenticated%}
+                    <li class="nav-item dropdown gap-2 ">
+                        <a class="btn btn-md  dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="capitalize">{{request.user.username|capfirst}}</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="{% url 'orders' %}">My Orders</a></li>
+                            <li><a class="dropdown-item" href="{% url 'profile'%}">My Account</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-target="#offcanvasRight"
+                                data-bs-toggle="offcanvas">Support</a></li>
+                            <li><a class="dropdown-item" href="{% url 'logout' %}">Log Out</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-md " href="{% url 'cart'%}" >My Cart</a>
+                    </li>
+                  </ul>
+                  {% else %}
+                  <ul class="navbar-nav  mx-auto">
+                    <li class=" nav-item ">
+                        <a class="btn  btn-md btn-dark" style="background-color: black; color: white;" href="{% url 'login' %}"
+                            role="button">Login</a>
+                        <a class="btn  btn-md btn-dark" style="background-color: black; color: white;" href="{% url 'registration'%}"
+                            role="button">Register</a>
+                    </li>
+                  </ul>
+                  {% endif %}
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- Offcanvas -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header container-fluid">
+            <h3 id="offcanvasRightLabel">For any Queries</h3>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <table class="table table-hover">
+                <tr>
+                    <td>Address</td>
+                    <td>Nagpur, Maharashtra</td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>8546112453</td>
+                </tr>
+                <tr>
+                    <td>Email Adress</td>
+                    <td>Lotusshop@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Follw us on</td>
+                    <td>
+                        <i class="bi bi-facebook"></i>
+                        <i class="bi bi-twitter"></i>
+                        <i class="bi bi-instagram"></i>
+                        <i class="bi bi-whatsapp"></i>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <div class="container-fluid" style="background-color: black;">
+                <h3>Help Us To Reach You</h3>
+            </div>
+            <div class="form-floating">
+                <input type="email" id="email" class="form-control" placeholder="Email">
+                <label for="email" class="form-label">Email</label>
+                <br>
+                <button class="btn " type="submit">Submit</button>
+            </div>
+        </div>
+
+    </div>
+
+    {%block content%}
+    {%endblock%}
+
+</body>
+
+</html>
