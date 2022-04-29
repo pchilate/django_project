@@ -278,23 +278,4 @@ def orders(request):
 
 
 
-#
-# def laptop1(request):
-#     data = Laptops.objects.all()
-#     return render(request,'p.html', {"data":data})
-#
-# def laptops(request):
-#     data = Laptops.objects.all()
-#     return render(request,'products.html', {"data":data})
-#
-# def laptops(request):
-#     data = Laptops.objects.all()
-#     return render(request,'products.html', {"data":data})
-#
-# def laptops(request):
-#     data = Laptops.objects.all()
-#     return render(request,'products.html', {"data":data})
-#
-# def laptops(request):
-#     data = Laptops.objects.all()
-#     return render(request,'products.html', {"data":data})
+
